@@ -4,15 +4,16 @@ import java.util.Map;
 import java.util.SortedMap;
 import java.util.TreeMap;
 
-
 public class AppMain {
 
 	public static void main(String[] args) {
+		
 		/*
 		 * Ejemplo de uso del método CalculosMatematicos.divisores
 		 * Este método descompone un número en factores primos
 		 * Retornando un mapa con los factores primos
 		 */
+		
 		int num = 180;
 		SortedMap<Integer,Integer> divisores = new TreeMap<>();
 		divisores=CalculosMatematicos.divisores(num);
