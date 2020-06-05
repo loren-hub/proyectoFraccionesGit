@@ -63,7 +63,20 @@ public class AppMain {
 			}
 			System.out.print("El resultado es: "+resultado.getNumerador()+"/"+resultado.getDenominador());
 		} else if (a.equals("e")) {
-			//Aqui se multiplica fracciones
+			int numerador, denominador;
+			System.out.println("Introduce numerador");
+			numerador=Integer.parseInt(pe.readLine());
+			System.out.println("Introduce denominador");
+			denominador=Integer.parseInt(pe.readLine());
+			Fraccion fr1=new Fraccion(numerador,denominador);
+			System.out.println("Introduce numerador");
+			numerador=Integer.parseInt(pe.readLine());
+			System.out.println("Introduce denominador");
+			denominador=Integer.parseInt(pe.readLine());
+			Fraccion fr2=new Fraccion(numerador,denominador);
+			Fraccion resultado=Fraccion.multiplicacion(fr1, fr2);
+			System.out.print("El resultado es: "+resultado.getNumerador()+"/"+resultado.getDenominador());
+			
 		} else if (a.equals("f")) {
 			//Aqui se divide fracciones
 		} else if (a.equals("g")) {
