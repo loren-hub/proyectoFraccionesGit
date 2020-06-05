@@ -34,7 +34,11 @@ public class AppMain {
 		    int hoy = pp.mcm(peter, bryan);
 			System.out.println("tu minimo comun multiplo seria:" + " " + hoy);
 		} else if (a.equals("c")) {
-			//Aqui se calcula Simplificacion de fracciones
+			int numerador=Integer.parseInt(pe.readLine());
+			int denominador=Integer.parseInt(pe.readLine());
+			Fraccion fr=new Fraccion(numerador,denominador);
+			fr=Fraccion.simplifica(fr);
+			System.out.print("La fraccion simplificada es: "+fr.getNumerador()+"/"+fr.getDenominador());
 		} else if (a.equals("d")) {
 			//Aqui se hace suma o resta de fracciones
 		} else if (a.equals("e")) {
