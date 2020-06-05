@@ -9,7 +9,6 @@ public class CalculosMatematicos {
 		return numero % 2 == 0;
 	}
 
-	//Comprobacion
 	/*
 	 * 
 	 * Este método se usa para descomponer un número en sus factores primos Genera
