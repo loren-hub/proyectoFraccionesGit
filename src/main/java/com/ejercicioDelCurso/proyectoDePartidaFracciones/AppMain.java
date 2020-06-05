@@ -34,13 +34,34 @@ public class AppMain {
 		    int hoy = pp.mcm(peter, bryan);
 			System.out.println("tu minimo comun multiplo seria:" + " " + hoy);
 		} else if (a.equals("c")) {
+			System.out.println("Introduce numerador");
 			int numerador=Integer.parseInt(pe.readLine());
+			System.out.println("Introduce denominador");
 			int denominador=Integer.parseInt(pe.readLine());
 			Fraccion fr=new Fraccion(numerador,denominador);
 			fr=Fraccion.simplifica(fr);
 			System.out.print("La fraccion simplificada es: "+fr.getNumerador()+"/"+fr.getDenominador());
 		} else if (a.equals("d")) {
-			//Aqui se hace suma o resta de fracciones
+			int numerador, denominador;
+			System.out.println("Introduce numerador");
+			numerador=Integer.parseInt(pe.readLine());
+			System.out.println("Introduce denominador");
+			denominador=Integer.parseInt(pe.readLine());
+			Fraccion fr1=new Fraccion(numerador,denominador);
+			System.out.println("Introduce numerador");
+			numerador=Integer.parseInt(pe.readLine());
+			System.out.println("Introduce denominador");
+			denominador=Integer.parseInt(pe.readLine());
+			Fraccion fr2=new Fraccion(numerador,denominador);
+			System.out.println("Sumar o restar? (s/r)");
+			String operacion=pe.readLine();
+			Fraccion resultado=null;
+			if(operacion.equals("s")) {
+				resultado=Fraccion.suma(fr1,fr2);
+			}else if(operacion.equals("r")) {
+				resultado=Fraccion.resta(fr1,fr2);
+			}
+			System.out.print("El resultado es: "+resultado.getNumerador()+"/"+resultado.getDenominador());
 		} else if (a.equals("e")) {
 			//Aqui se multiplica fracciones
 		} else if (a.equals("f")) {
