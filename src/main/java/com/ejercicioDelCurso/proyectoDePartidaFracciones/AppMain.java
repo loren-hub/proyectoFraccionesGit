@@ -13,12 +13,11 @@ public class AppMain {
 		System.out.println("Introduzca que quiere hacer, cuando quiera acabar, introduzca: fin");
 		System.out.println("a-Habra que intoducir 2 numeros y se indicara(si hay) el Max.Comun.Divisor");
 		System.out.println("b-Habra que intoducir 2 numeros y se indicara(si hay) el Min.Comun.Multiplo)");
-		System.out.println("c-");
-		System.out.println("d-");
-		System.out.println("e-");
-		System.out.println("f-");
-		System.out.println("g-");
-		System.out.println("h-");
+		System.out.println("c-Simplificación de Fracciones");
+		System.out.println("d-Suma (o resta) de fracciones");
+		System.out.println("e-Multiplicación de Fracciones");
+		System.out.println("f-División de fracciones");
+		System.out.println("g-Descomposición de un número en factores primos");
 		String a = pe.readLine();
 		do {
 		if (a.equals("a")) {
@@ -92,9 +91,18 @@ public class AppMain {
 			Fraccion resultado=Fraccion.division(fr1, fr2);
 			System.out.print("El resultado es: "+resultado.getNumerador()+"/"+resultado.getDenominador());
 		} else if (a.equals("g")) {
-			//Aqui se calcula Simplificacion de fracciones
-		}else if (a.equals("h")) {
-			//Aqui se descomponen fracciones
+			System.out.print("Introduce numero a descomponer:");
+			int num = Integer.parseInt(pe.readLine());
+			SortedMap<Integer,Integer> divisores = new TreeMap<>();
+			divisores=CalculosMatematicos.divisores(num);
+			for(Map.Entry<Integer, Integer> entrada: divisores.entrySet()) {
+				int divisor=entrada.getKey();
+				int numeroVeces=entrada.getValue();
+				for(int i=1;i<=numeroVeces;i++) {
+				System.out.println(num+"\t|\t"+divisor);
+				num=num/divisor;
+				}
+			}
 		}
 		a = pe.readLine();
 		} while(!a.equals("fin"));
